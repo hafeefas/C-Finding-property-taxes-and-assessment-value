@@ -1,0 +1,29 @@
+/* A county collects property taxes on the value of property, which is 60 percent of the property's value. 
+If an acre of land is valued at $10,000 its assessment value is $6000. The property tax is then 75 cents for each $100 of the assessment value. 
+The tax for the acre is assessed at $6000 will be $45.
+Write a program that asks for the actual value of a piece of property and displays the assessment value and property tax. */
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    double propertyValue;
+    const double assessmentRate=0.60; 
+    const double taxRate = 0.0075;
+
+    cout << "What is the actual value of a piece of property?: $";
+    cin >> propertyValue;
+    
+    cout << "The assessment value is: $";
+    double assessmentValue = (propertyValue * assessmentRate);
+    cout << fixed << setprecision (2) << assessmentValue << endl;
+    
+    double propertyTax = taxRate * assessmentValue;
+
+    cout << "The property tax is: $" << fixed << setprecision(2) << propertyTax;
+
+    return 0;
+}
